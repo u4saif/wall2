@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+<div class="card" style="width: 100%; height: 500px;display: inline-block;;">
+     <div>
+     
+      <img class="card-img-top" src={{imgLink}}>
+      <p class="card-text"> This image is posted by {{imgLink.user.first_name}}</p>
+    </div>
+      <p class="card-text">Description: {{imgLink.alt_description}}
+        <br>❤️ {{imgLink.likes}} <i class="fa fa-download" style="font-size:20px;color:rgb(241, 241, 241)">   {{imgLink.height}}</i>
+      </p>
+    
+      <a   class="btn btn-success" target="_blank" href={{imgLink.urls.full}} >Download</a> 
+
+      <a   class="btn btn-danger" routerLink=''>Back</a> 
+
+      <a  href="mailto:u4saif@gmail.com"  class="btn btn-primary">📧:u4saif@gmail.com <br>
+        <span style="font-size: x-small;"> Please report to me if you find this image abusive/explicit</span>
+      </a>
+     
+   
+  </div>
+
+ 

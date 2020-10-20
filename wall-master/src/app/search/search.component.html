@@ -1,0 +1,32 @@
+<div class="topnav" >
+  <h4>Search Results for {{find}}</h4>
+</div>
+
+<div class="topnav" > 
+  <form (submit)=dosearch(search)>
+      <div class="search">
+          <a  (click)='dosearch(search)'><mat-icon id="search">search</mat-icon></a> 
+        <input placeholder="search" type="text"  placeholder="  Search.." name='search' ngModel #search=ngModel>
+      </div>
+  </form>
+</div>
+
+<div  class="container" *ngFor='let i of searchObj | async;'>
+    <div *ngFor='let j of i.results'>
+      <div id="imgTop"></div>
+      <a (click)="view(j.urls.regular)">
+      <img   class="item" src={{j.urls.small}} alt="no Img found" >
+     </a>
+     </div>   
+ </div>
+
+
+  <div class="dialogimg" *ngIf='dialogimg'>
+    <div class="modal-content" style="background-image:url({{dialogimgLink}});background-size: cover;">
+    <div class="modal-button" style="width: 100%; height: 100px; display: flex; justify-content:space-between;
+    justify-items:auto;">
+    <div class="close" (click)="closeDialog()">+</div> 
+    <mat-icon class="save" (click)="saveas()">save_alt</mat-icon> 
+    </div>
+    </div>
+  </div> 
